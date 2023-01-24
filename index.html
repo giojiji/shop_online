@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>shop</title>
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <input
+        oninput="inpsearch()"
+        type="text"
+        id="searchbar"
+        placeholder="search"
+      />
+      <span>selected products: </span>
+      <p id="quantity">0</p>
+      <span>full items: </span>
+      <p id="full_items">0</p>
+      <span>full amount: </span>
+      <p id="full_amount">0</p>
+      <button onclick="orderconfirmed()">confirm order</button>
+    </nav>
+    <div id="maindisplay">
+      <div id="filterbox">
+        <label for="" id="pricefrom">price from: 0 $</label>
+        <input
+          type="range"
+          min="0"
+          max="1000"
+          id="pricerange"
+          oninput="changingprice()"
+          value="0"
+        />
+        <label for="">All</label>
+        <input
+          type="checkbox"
+          oninput="allcategorise()"
+          checked
+          class="checkboxclass"
+          disabled
+        />
+        <label for="">men's clothing</label>
+        <input
+          type="checkbox"
+          oninput="categorise()"
+          class="checkboxclass"
+          name="men's clothing"
+        />
+        <label for="">jewelery</label>
+        <input
+          type="checkbox"
+          oninput="categorise()"
+          class="checkboxclass"
+          name="jewelery"
+        />
+        <label for="">electronics</label>
+        <input
+          type="checkbox"
+          oninput="categorise()"
+          class="checkboxclass"
+          name="electronics"
+        />
+        <label for="">women's clothing</label>
+        <input
+          type="checkbox"
+          oninput="categorise()"
+          class="checkboxclass"
+          name="women's clothing"
+        />
+      </div>
+
+      <div id="productAPI" onclick="getproduct(event)"></div>
+
+      <div id="productCart" onclick="clearproduct(event)"></div>
+    </div>
+
+    <script src="items.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
